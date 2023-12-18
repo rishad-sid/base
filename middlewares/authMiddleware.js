@@ -13,7 +13,7 @@ const authMiddleware = (req, res, next) => {
 
   try {
     // Verify the token using the secret key from the config file
-    const decoded = jwt.verify(token, config.authentication);
+    const decoded = jwt.verify(token, config.secretKey);
 
     // Attach the user to the request object
     req.user = decoded.user;
